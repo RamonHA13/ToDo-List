@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-size: 1.5rem;
+}
+header{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    z-index: -1;
+}
+#headerTitle{
+    display: inline;
+    margin-top: 10px;
+}
+#mainGear{
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+}
+#options{
+    
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    background-color: red;
+    display: none;
+    box-shadow: 1px 1px 150px 30px rgba(0, 0, 0, .5);
+}
