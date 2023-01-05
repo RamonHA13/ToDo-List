@@ -1,2 +1,2 @@
 # ToDo-List
-Simple TO DO list (JS)
+Simple TO DO list (Vanilla JS)
