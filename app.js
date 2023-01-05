@@ -1,19 +1,17 @@
-import { mainGear, options, header} from "./dom.js";
+
 
 window.addEventListener("DOMContentLoaded", ()=>{
-
-
-
+    alert("Dom cargado")
 });
 
-// mainGear.addEventListener("click", ()=>{
-//     mainGear.animate([
-//         { transform: 'rotate(360deg)' }
-//     ], {
-//         duration: 1000,
-//         direction: "reverse",
-//     })
+
+bar.addEventListener("click", ()=>{
     
-// })
+    wrapperAnimation(true,250);
+})
+
+closeOptions.addEventListener("click", ()=>{
+    wrapperAnimation(false,250);
+})
 
 

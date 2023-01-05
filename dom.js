@@ -1,5 +1,5 @@
 const $ = id => document.getElementById(id);
 
-export const mainGear = $("mainGear");
-export const options = $("options");
-export const header = document.querySelector("header");
+const bar = $("bar");
+const wrapper = $("wrapper");
+const closeOptions = $("closeOptions")
