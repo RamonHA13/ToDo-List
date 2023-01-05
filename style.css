@@ -3,44 +3,71 @@ body{
     padding: 0px;
     height: 100vh;
 }
+/*Header styles*/
 header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
 
-    height: 100px;
-}
-header h1{
-    display: inline-block;
-    position: absolute;
-    left: 45%;
-    right: 45%;
-}
 #bar{
     display: inline-block;
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
-    top: 2%;
-    left: 2%;
+    left: 2%; 
 }
-
+/*SideBar styles*/
 #wrapper{
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
     display: none;
+    justify-content: center;
+    position: absolute;
+    top: 0; 
     width: 15%;
     height: 100vh;
-    background-color: blue;
     text-align: center;
     font-size: 2rem;
+    box-sizing: border-box;
+    background-color: blue;
 }
-#wrapperHeader p{
+
+/* #wrapperHeader p{
     display: inline-block;
     margin-top: 10%; 
-}
+} */
 #closeOptions{
-    position: absolute;
+    /* position: absolute;
     right: 5%;
-    top: 1%;
+    top: 1%; */
     cursor: pointer;
 }
 
+/*To do card section*/
+#toDoCardFormSection{
+    border: 1px solid;
+    padding: 2%;
+}
+#toDoCardsSection{
+    box-sizing: border-box;
+    border: 1px solid;
+    display: grid; /*grid*/
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 2%;
+}
+.toDoCard{
+    padding: 2%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.toDoCard h2{
+    text-align: center;
+    margin: 0;
+    /* font-size: 2rem; */
+}
+.toDoCard p{
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+}

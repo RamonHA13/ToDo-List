@@ -8,26 +8,36 @@
     <title>ToDo List</title>
 </head>
 <body>
-    
-   
-   
     <header>
         <span id="bar" class="fa-solid fa-bars"></span>
-        <div id="wrapper">
-            <div id="wrapperHeader">
-                <p>Options</p> <span class="fa-solid fa-xmark" id="closeOptions"></span>
-            </div>
-            
-        </div>
         <h1>ToDo List</h1>
     </header>
-    
+    <div id="wrapper">
+        <div id="wrapperHeader">
+            <p>Options</p> <span class="fa-solid fa-xmark" id="closeOptions"></span>
+        </div>
+    </div>
+    <main>
+        <section id="toDoCardFormSection">
+            <form id="toDoCardForm">
+                <label for="titleInput">Title:</label>
+                <input type="text" id="titleInput">
+                <label for="contentInput">Content</label>
+                <textarea name="contentInput" id="contentInput" cols="30" rows="10"></textarea>
+                <button type="submit" id="addToDoButton">Add</button>
+            </form>
+        </section>
+        <section id="toDoCardsSection">
+            
+        </section>
+    </main>
     
     
     <!--Font awesome-->
     <script src="https://kit.fontawesome.com/9a5b41a4b1.js" crossorigin="anonymous"></script>
 
-    <script src="sideBarAnimation.js"></script>
+    <script src="components.js"></script>
+    <script src="animation.js"></script>
     <script src="dom.js"></script>
     <script src="app.js"></script>
     
