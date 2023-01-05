@@ -1,6 +1,6 @@
 class toDoCardComponent {
-    constructor(id, title, content, className){
-        this.id = id;
+    constructor(title, content, className){
+        this.id = undefined;
         this.title = title;
         this.content = content;
         this.date = undefined;

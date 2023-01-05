@@ -1,3 +1,6 @@
+const toDoCardObjects = [];
+let iterator = 0
+
 bar.addEventListener("click", () => {
     wrapperAnimation(true,250);
 })
@@ -6,16 +9,25 @@ closeOptions.addEventListener("click", () => {
     wrapperAnimation(false,250);
 })
 
+toDoCardForm.addEventListener("submit", (e) =>{
 
-// const todo1 = new toDoCardComponent(1,"comer","ir a comer", "toDoCard");
-const toDoCards = []
-for(i=0; i < 6; i++){
+    const titleContent = e.target[0].value;
+    const textAreaContent = e.target[1].value;
     
-    toDoCards.push(new toDoCardComponent(i, `Comer`, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "toDoCard"));
-}
-toDoCards.forEach((element, index) => {
-    toDoCardSection.innerHTML += element.render();
+    e.preventDefault();
+    addCard(titleContent,textAreaContent, iterator);
+    iterator++;
 })
-// console.log(todo1)
-console.log(toDoCards)
-console.log(toDoCardForm)
+
+const addCard = (title, text, i) =>{
+
+    toDoCardObjects.push(new toDoCardComponent(title, text, "toDoCard"))
+    const arrayToDos = toDoCardObjects.map((card, index) =>{
+        card.id = index + 1;
+        return card.render()
+    })
+
+    toDoCardSection.innerHTML += arrayToDos[i]
+    console.log()
+}
+
