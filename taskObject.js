@@ -23,7 +23,7 @@ const addCard = (props) => {
 
     const deleteButton = item.children[2].children[1];
     const doneButton = item.children[2].children[0];
-
+    const checkIcon = item.children[3];
     deleteButton.addEventListener("click",(e) => {
         
         const buttonId = Number(deleteButton.getAttribute("buttonId"));
@@ -33,12 +33,15 @@ const addCard = (props) => {
     doneButton.addEventListener("click", (e) => {
         
         props.state = true;
-        // doneAnimation();
+        checkIcon.style.visibility = "visible"
+        doneAnimation(checkIcon);
+        
         setTimeout(() => {
             deleteCard();
         }, 1000);
         
     })
+    console.log();
 };
 
 const deleteCard = (id) => {
@@ -59,7 +62,9 @@ const makeCardComponent = (props) => {
     <div class="buttons">
         <button class="doneButton" buttonId="${props.id}">Marks as done</button> 
         <button class="deleteButton" buttonId="${props.id}">Delete</button>
+       
     </div>
+    <i class="fa-solid fa-check checkIcon" style="visibility: hidden"></i>
     `);
 
     return item;

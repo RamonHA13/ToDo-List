@@ -1,5 +1,5 @@
-const slideAnimation = (element, time, cordenadas) => { 
-    const [x1,x2] = cordenadas
+const slideAnimation = (element, time, coords) => { 
+    const [x1,x2] = coords
     element.animate([
         { transform: `translateX(${x1})`},
         { transform: `translateX(${x2})`},
@@ -17,4 +17,18 @@ const wrapperAnimation = (status, time) => {
             wrapper.style.display = "none"
         }, time)
     }
+}
+
+const doneAnimation = (element) =>{
+    element.animate([
+        {
+            scale: "100%",
+        },
+        {
+            scale: "500%",
+        },
+        {
+            scale: "0",
+        }
+    ],1000);
 }
