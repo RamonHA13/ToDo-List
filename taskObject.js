@@ -12,35 +12,55 @@ const makeObject = (date, title, text) => {
     }
 
     toDoCardObjects = [...toDoCardObjects,tarea]
-    console.log(toDoCardObjects)
+    // console.log(toDoCardObjects)
 };
 
 const addCard = (props) => {
     
-    const item = document.createElement("div");
-    item.classList.add("toDoCard")
-    item.insertAdjacentHTML("afterbegin",`<h2>${props.titulo}</h2>
-    <p>${props.tarea}</p>
-    <div class="buttons">
-        <button class="editar" buttonId="${props.id}">Editar</button> 
-        <button class="eliminar" buttonId="${props.id}">Eliminar</button>
-    </div>
-    `)
-    
+    const item = makeCardComponent(props);
+
     toDoCardSection.appendChild(item);
+
     const deleteButton = item.children[2].children[1];
-    const editButton = item.children[2].children[0];
+    const doneButton = item.children[2].children[0];
 
     deleteButton.addEventListener("click",(e) => {
         
         const buttonId = Number(deleteButton.getAttribute("buttonId"));
-        deleteCard(buttonId)
+        deleteCard(buttonId);
+    })
+
+    doneButton.addEventListener("click", (e) => {
+        
+        props.state = true;
+        // doneAnimation();
+        setTimeout(() => {
+            deleteCard();
+        }, 1000);
+        
     })
 };
 
-const deleteCard = (id) =>{
+const deleteCard = (id) => {
+    
     toDoCardObjects = toDoCardObjects.filter((card) => card.id !== id);
+    toDoCardObjects = toDoCardObjects.filter((card) => card.state !== true);
     toDoCardSection.innerHTML = "";
-    toDoCardObjects.map((element, index) => addCard(element));
-    // console.log(typeof(id));
+    toDoCardObjects.map( element => addCard(element));
+    
 };
+
+const makeCardComponent = (props) => {
+    const item = document.createElement("div");
+    item.classList.add("toDoCard");
+    item.insertAdjacentHTML("afterbegin",
+    `<h2>${props.titulo}</h2>
+    <p>${props.tarea}</p>
+    <div class="buttons">
+        <button class="doneButton" buttonId="${props.id}">Marks as done</button> 
+        <button class="deleteButton" buttonId="${props.id}">Delete</button>
+    </div>
+    `);
+
+    return item;
+}
