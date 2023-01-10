@@ -13,11 +13,11 @@ toDoCardForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const titleContent = e.target[0].value;
     const textAreaContent = e.target[1].value;
-    const date = Date.now();
+    const id = Date.now();
     
-    makeObject(date, titleContent, textAreaContent);
+    makeObject(id, titleContent, textAreaContent);
     toDoCardSection.innerHTML = ""
-    toDoCardObjects.map((element, index) => addCard(element));
+    toDoCardObjects.map((element) => addCard(element));
     
 });
 
